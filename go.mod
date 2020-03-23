@@ -1,4 +1,4 @@
-module github.com/mdlayher/apcupsd_exporter
+module github.com/leoligz/apcupsd_exporter
 
 go 1.12
 
