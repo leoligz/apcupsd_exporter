@@ -1,8 +1,12 @@
 FROM golang:alpine AS build-env
 
+ENV GO111MODULE=on \
+    CGO_ENABLED=0
+
 ADD . /src
-RUN apk add --no-cache git
 WORKDIR /src
+
+RUN go mod download
 RUN go test ./...
 RUN go build cmd/apcupsd_exporter/main.go
 
